@@ -1,0 +1,139 @@
+﻿<Page x:Class="PatientApp.View.TestView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+      
+        xmlns:local="clr-namespace:PatientApp.ViewModel"
+      mc:Ignorable="d" 
+      Height="650" Width="1025"
+      Title="TestView"
+      DataContext="{Binding Test,Source={StaticResource  Locator}}">
+
+
+
+    <Grid Background="LightBlue">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" BorderBrush="Black" BorderThickness=" 0 0 2 0">
+            <Grid Grid.Column="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="220"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="220"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Button Width="50" Height="50" VerticalAlignment="Top" Margin="10 5 0 0"  HorizontalAlignment="Left" Background="Transparent"
+                            Command="{Binding BackCmd}">
+                        <Image Source="/Image/back.png"></Image>
+                    </Button>
+
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="Patient Info:"
+                               TextAlignment="Center" Margin="30 40 0 0" FontSize="21"></TextBlock>
+
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="First Name"
+                               VerticalAlignment="Center" Margin="0 0 80 30"></TextBlock>
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="Second Name"
+                                VerticalAlignment="Center" Margin="0 40 80 0"></TextBlock>
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="MRN"
+                                VerticalAlignment="Center" Margin="0 110 80 0"></TextBlock>
+
+                    <TextBox Style="{DynamicResource TextBoxPatient}" Width="125" VerticalAlignment="Center" 
+                             Margin="130 0 0 30" IsReadOnly="True" Text="{Binding PatientTestModel.FirstName}"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxPatient}" Width="125" VerticalAlignment="Center" 
+                             Margin="130 40 0 0" IsReadOnly="True" Text="{Binding PatientTestModel.SecondName}"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxPatient}" Width="125" VerticalAlignment="Center" 
+                             Margin="130 110 0 0" IsReadOnly="True" Text="{Binding PatientTestModel.MRN}"></TextBox>
+
+                    <Rectangle Stroke="#FF000000" Height="1" StrokeThickness="1" StrokeDashArray="4 4"
+                                                               SnapsToDevicePixels="True" Margin="0 180 0 0"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="Order Info:"
+                               TextAlignment="Center" Margin="30 0 0 0" FontSize="21"></TextBlock>
+
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="OrderNumber"
+                               VerticalAlignment="Center" Margin="0 0 80 90"></TextBlock>
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="Start Date"
+                                VerticalAlignment="Center" Margin="0 0 80 20"></TextBlock>
+                    <TextBlock Style="{DynamicResource TextBlockStylePatient2}" Text="End Date"
+                                VerticalAlignment="Center" Margin="0 50 80 0"></TextBlock>
+
+                    <TextBox Style="{DynamicResource TextBoxPatient}" Width="125" VerticalAlignment="Center" 
+                             Margin="130 0 0 90" IsReadOnly="True" Text="{Binding OrderTestModel.OrderNumber}"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxPatient}" Width="125" VerticalAlignment="Center" 
+                             Margin="130 0 0 20" IsReadOnly="True" Text="{Binding OrderTestModel.StartDate}"></TextBox>
+                    <TextBox Style="{DynamicResource TextBoxPatient}" Width="125" VerticalAlignment="Center" 
+                             Margin="130 50 0 0" IsReadOnly="True" Text="{Binding OrderTestModel.EndDate}"></TextBox>
+
+                    <Rectangle Stroke="#FF000000" Height="1" StrokeThickness="1" StrokeDashArray="4 4"
+                                                               SnapsToDevicePixels="True" Margin="0 150 0 0"/>
+                </Grid>
+
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <TextBlock Width="130" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"
+                               Text="Search Test(TestId) " TextAlignment="Center" FontSize="15" Margin="10 10 0 0"></TextBlock>
+
+                <TextBox Width="130" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"
+                             Background="LightGray" Margin="160 10 0 0" Text="{Binding SearchTestId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <DataGrid Grid.Column="1" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow"
+                                  CanUserResizeColumns="False" CanUserSortColumns="True"
+                                  AlternatingRowBackground="LightYellow" AlternationCount="2"
+                                  RowBackground="LightCyan"
+                                  HeadersVisibility="Column" 
+                                  ItemsSource="{Binding AllTest}"
+                                  CanUserAddRows="False" IsReadOnly="True"
+                                  Background="LightBlue"
+                                  Margin="0 0 0 0"
+                                  Width="auto"
+                                  SelectedItem ="{Binding SelectedTest,Mode=TwoWay}"
+                                  ColumnHeaderStyle="{DynamicResource HeaderStyle}"
+                                  RowStyle="{DynamicResource DataGridRowStyle}"
+                                  CellStyle="{DynamicResource DataGridCellStyle}"
+                                  BorderThickness="0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="TestId"
+                                      Binding="{Binding Path=TestId}" Width="2*"/>
+                        <DataGridTextColumn Header="Type"
+                                      Binding="{Binding Path=Type}" Width="2*" />
+                        <DataGridTextColumn Header="Title"
+                                      Binding="{Binding Path=Title}" Width="2*" />
+                        <DataGridTextColumn Header="SpecimenCode"
+                                      Binding="{Binding Path=SpecimenCode}" Width="2*" />
+                        <DataGridTextColumn Header="Priority"
+                                      Binding="{Binding Path=Priority}" Width="2*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <cmd:EventToCommand Command="{Binding OnLoad}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+</Page>

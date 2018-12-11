@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://SoftIDTx/Services/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://SoftIDTx/Services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema targetNamespace="http://SoftIDTx/Services/">
+      <s:include schemaLocation="http://localhost:51232/WebService.asmx?schema=schema1" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadAllPatientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllPatient" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllPatientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadPatientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadPatientDataByMrn" />
+  </wsdl:message>
+  <wsdl:message name="LoadPatientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadPatientDataByMrnResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePatientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePatient" />
+  </wsdl:message>
+  <wsdl:message name="CreatePatientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePatientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePatient" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePatientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePatientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePatient" />
+  </wsdl:message>
+  <wsdl:message name="DeletePatientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllOrderDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllOrder" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllOrderDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadOrderDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadOrder" />
+  </wsdl:message>
+  <wsdl:message name="LoadOrderDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllTest" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadTest" />
+  </wsdl:message>
+  <wsdl:message name="LoadTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTest" />
+  </wsdl:message>
+  <wsdl:message name="CreateTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTest" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrder" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrderDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="EqualsPatientSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPatient" />
+  </wsdl:message>
+  <wsdl:message name="EqualsPatientSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadPatientDataByOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadPatientDataByOrder" />
+  </wsdl:message>
+  <wsdl:message name="LoadPatientDataByOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadPatientDataByOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrderDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrderDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearAllTestSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearTest" />
+  </wsdl:message>
+  <wsdl:message name="ClearAllTestSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSelectedTestsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAllTest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSelectedTestsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAllTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllTitleSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllTitle" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllTitleSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadTitleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTitle" />
+  </wsdl:message>
+  <wsdl:message name="LoadTitleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadTitleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTitleId" />
+  </wsdl:message>
+  <wsdl:message name="LoadTitleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTitleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="NextIdOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastIndex" />
+  </wsdl:message>
+  <wsdl:message name="NextIdOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadOrderDataByOrderNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadOrderByOrderNumber" />
+  </wsdl:message>
+  <wsdl:message name="LoadOrderDataByOrderNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadOrderByOrderNumberResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MyWebService_Binding">
+    <wsdl:operation name="LoadAllPatientData">
+      <wsdl:input message="tns:LoadAllPatientDataSoapIn" />
+      <wsdl:output message="tns:LoadAllPatientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPatientData">
+      <wsdl:input message="tns:LoadPatientDataSoapIn" />
+      <wsdl:output message="tns:LoadPatientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePatientData">
+      <wsdl:input message="tns:CreatePatientDataSoapIn" />
+      <wsdl:output message="tns:CreatePatientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientData">
+      <wsdl:input message="tns:UpdatePatientDataSoapIn" />
+      <wsdl:output message="tns:UpdatePatientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatientData">
+      <wsdl:input message="tns:DeletePatientDataSoapIn" />
+      <wsdl:output message="tns:DeletePatientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllOrderData">
+      <wsdl:input message="tns:LoadAllOrderDataSoapIn" />
+      <wsdl:output message="tns:LoadAllOrderDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderData">
+      <wsdl:input message="tns:LoadOrderDataSoapIn" />
+      <wsdl:output message="tns:LoadOrderDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllTestData">
+      <wsdl:input message="tns:LoadAllTestDataSoapIn" />
+      <wsdl:output message="tns:LoadAllTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestData">
+      <wsdl:input message="tns:LoadTestDataSoapIn" />
+      <wsdl:output message="tns:LoadTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTestData">
+      <wsdl:input message="tns:CreateTestDataSoapIn" />
+      <wsdl:output message="tns:CreateTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestData">
+      <wsdl:input message="tns:DeleteTestDataSoapIn" />
+      <wsdl:output message="tns:DeleteTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderData">
+      <wsdl:input message="tns:CreateOrderDataSoapIn" />
+      <wsdl:output message="tns:CreateOrderDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EqualsPatient">
+      <wsdl:input message="tns:EqualsPatientSoapIn" />
+      <wsdl:output message="tns:EqualsPatientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadPatientDataByOrder">
+      <wsdl:input message="tns:LoadPatientDataByOrderSoapIn" />
+      <wsdl:output message="tns:LoadPatientDataByOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderData">
+      <wsdl:input message="tns:DeleteOrderDataSoapIn" />
+      <wsdl:output message="tns:DeleteOrderDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearAllTest">
+      <wsdl:input message="tns:ClearAllTestSoapIn" />
+      <wsdl:output message="tns:ClearAllTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSelectedTests">
+      <wsdl:input message="tns:UpdateSelectedTestsSoapIn" />
+      <wsdl:output message="tns:UpdateSelectedTestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllTitle">
+      <wsdl:input message="tns:LoadAllTitleSoapIn" />
+      <wsdl:output message="tns:LoadAllTitleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTitle">
+      <wsdl:input message="tns:LoadTitleSoapIn" />
+      <wsdl:output message="tns:LoadTitleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTitleId">
+      <wsdl:input message="tns:LoadTitleIdSoapIn" />
+      <wsdl:output message="tns:LoadTitleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NextIdOrder">
+      <wsdl:input message="tns:NextIdOrderSoapIn" />
+      <wsdl:output message="tns:NextIdOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderDataByOrderNumber">
+      <wsdl:input message="tns:LoadOrderDataByOrderNumberSoapIn" />
+      <wsdl:output message="tns:LoadOrderDataByOrderNumberSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyWebService_Binding" type="tns:MyWebService_Binding">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadAllPatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllOrderData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllTestData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTestData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EqualsPatient">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPatientDataByOrder">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearAllTest">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSelectedTests">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllTitle">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTitle">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTitleId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextIdOrder">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderDataByOrderNumber">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyWebService_Binding1" type="tns:MyWebService_Binding">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadAllPatientData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPatientData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePatientData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePatientData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllOrderData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllTestData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTestData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTestData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrderData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EqualsPatient">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPatientDataByOrder">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearAllTest">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSelectedTests">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllTitle">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTitle">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTitleId">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NextIdOrder">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderDataByOrderNumber">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

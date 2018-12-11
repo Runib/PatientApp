@@ -1,0 +1,55 @@
+﻿<Page x:Class="PatientApp.View.ChoiceView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+        xmlns:local="clr-namespace:PatientApp.ViewModel"
+        xmlns:view="clr-namespace:PatientApp.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1025"
+        DataContext="{Binding Choice,Source={StaticResource Locator}}">
+
+    <Grid Background="LightBlue">
+        <Button Style="{DynamicResource ButtonStyle}"
+            Margin="0 0 280 0" 
+            Command="{Binding PatientCmd}" 
+            Background="#FFFFD986">
+            <DockPanel>
+                <TextBlock Style="{DynamicResource TextBlockStyle}"
+                            DockPanel.Dock="Bottom"
+                            Text="Patients"/>
+                <Image Source="/Image/patient_assignment.png"></Image>
+            </DockPanel>
+        </Button>
+
+        <Button 
+            Style="{DynamicResource ButtonStyle}"
+            Margin="0 0 0 0" 
+            Command="{Binding OrderCmd}"
+            Background="#FFFFD986">
+            <DockPanel>
+                <TextBlock Style="{DynamicResource TextBlockStyle}"
+                            DockPanel.Dock="Bottom"
+                            Text="Orders"/>
+                <Image Source="/Image/Orders.png"></Image>
+            </DockPanel>
+        </Button>
+
+        <Button 
+            Style="{DynamicResource ButtonStyle}"
+            Margin="280 0 0 0" 
+            Command="{Binding TestCmd}"
+            Background="#FFFFD986" >
+            <DockPanel>
+                <TextBlock Style="{DynamicResource TextBlockStyle}"
+                            DockPanel.Dock="Bottom"
+                            Text="Tests"/>
+                <Image Source="/Image/Tests.png"></Image>
+            </DockPanel>
+        </Button>
+
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Page>

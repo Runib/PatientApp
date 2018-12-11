@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://SoftIDTx/Services/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://SoftIDTx/Services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema targetNamespace="http://SoftIDTx/Services/">
+      <s:include schemaLocation="http://localhost:53337/WebService1.asmx?schema=schema1" />
+      <s:import schemaLocation="http://localhost:53337/WebService1.asmx?schema=schema2" namespace="http://tempuri.org/" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadPatientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadPatientData" />
+  </wsdl:message>
+  <wsdl:message name="LoadPatientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadPatientDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SavePatientDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SavePatient" />
+  </wsdl:message>
+  <wsdl:message name="SavePatientDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SavePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadOrderDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="LoadOrderDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveOrderDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveOrder" />
+  </wsdl:message>
+  <wsdl:message name="SaveOrderDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadTestInfo" />
+  </wsdl:message>
+  <wsdl:message name="LoadTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadTestInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTest" />
+  </wsdl:message>
+  <wsdl:message name="SaveTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MyWebService_Binding">
+    <wsdl:operation name="LoadPatientData">
+      <wsdl:input message="tns:LoadPatientDataSoapIn" />
+      <wsdl:output message="tns:LoadPatientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientData">
+      <wsdl:input message="tns:SavePatientDataSoapIn" />
+      <wsdl:output message="tns:SavePatientDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderData">
+      <wsdl:input message="tns:LoadOrderDataSoapIn" />
+      <wsdl:output message="tns:LoadOrderDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrderData">
+      <wsdl:input message="tns:SaveOrderDataSoapIn" />
+      <wsdl:output message="tns:SaveOrderDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestData">
+      <wsdl:input message="tns:LoadTestDataSoapIn" />
+      <wsdl:output message="tns:LoadTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestData">
+      <wsdl:input message="tns:SaveTestDataSoapIn" />
+      <wsdl:output message="tns:SaveTestDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyWebService_Binding" type="tns:MyWebService_Binding">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadPatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrderData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestData">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyWebService_Binding1" type="tns:MyWebService_Binding">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadPatientData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePatientData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrderData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTestData">
+      <soap12:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

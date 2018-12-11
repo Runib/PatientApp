@@ -1,0 +1,20 @@
+﻿PatientApp
+
+
+winexe
+C#
+.cs
+C:\Users\rniemczy\Documents\Visual Studio 2015\Projects\PatientApp\PatientApp\obj\Debug\
+PatientApp
+none
+false
+DEBUG;TRACE
+C:\Users\rniemczy\Documents\Visual Studio 2015\Projects\PatientApp\PatientApp\App.xaml
+13154650399
+
+33-1461237533
+71-189009745
+MainWindow.xaml;Style\DataGridInDataGridStyle.xaml;Style\DataGridStyle.xaml;Style\NormalContentStyle.xaml;Style\ValidationStyle.xaml;View\AddOrderView.xaml;View\AddPatientView.xaml;View\AddTestView.xaml;View\ChangePatientView.xaml;View\ChoiceView.xaml;View\OrderView.xaml;View\PatientView.xaml;View\TestView.xaml;
+
+False
+
